@@ -60,7 +60,7 @@ class FileOptionsTest < MiniTest::Test
 
     # this test is disabled on Windows for now, waiting for #486.
     # please remove this after merging #486.
-    return if Zip::RUNNING_ON_WINDOWS
+    skip if Zip::RUNNING_ON_WINDOWS
 
     assert_time_equal(::File.mtime(TXTPATH), ::File.mtime(EXTPATH_1))
     assert_time_equal(::File.mtime(TXTPATH), ::File.mtime(EXTPATH_2))
